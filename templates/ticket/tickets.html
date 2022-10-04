@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1>Tickets</h1>
+  <table class="table table-dark table-striped">
+    <tr>
+      <th>email</th>
+      <th>subject</th>
+      <th>message</th>
+    </tr>
+    <tbody>
+      {% for ticket in tickets %}
+      <tr th:each="ticket : ${ticket}">
+        <td th:text="${ticket.email}">{{ticket.email}}</td>
+        <td th:text="${ticket.subject}">{{ticket.subject}}</td>
+        <td th:text="${ticket.message}">{{ticket.message}}</td>
+        <td>
+          <button type="button" class="btn btn-light">
+            <a href="{% url 'mesaayuda:ticket-detail' ticket.id %}"> Details </a>
+          </button>
+          </td>
+        <td>
+        <button type="button" class="btn btn-light">
+          <a href="{% url 'mesaayuda:ticket-update' ticket.id %}"> Edit </a>
+        </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">
+            <a href="{% url 'mesaayuda:ticket-delete' ticket.id %}"> Delete </a>
+          </button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button class="btn btn-dark" type="button">
+    <a href="{% url 'mesaayuda:ticket_create' %}"> Add </a>
+  </button>
+</div>
+{% endblock content %}

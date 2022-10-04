@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Delete Ticket {% endblock %}
+
+{%block content %}
+
+<div class="p-4 container">
+    <form method="POST">{% csrf_token %}
+        <p> ¿Are you sure you want to delete this Ticket? </p>
+        <button class="btn btn-primary" type="submit">Confirm</button>
+        <a href="{% url 'mesaayuda:tickets' %}" class="btn btn-primary" role="button"> Cancel </a>
+    </form>
+</div>
+
+{% endblock %}
