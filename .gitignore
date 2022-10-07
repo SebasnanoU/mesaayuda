@@ -42,3 +42,6 @@ conda-requirements.txt
 
 # Doc files
 docs/build/
+
+data
+*.pem
