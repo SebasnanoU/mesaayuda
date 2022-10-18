@@ -89,17 +89,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-if env('POSTGRES_NAME') != '':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env('POSTGRES_NAME'),
-            'USER': env('POSTGRES_USER'),
-            'PASSWORD': env('POSTGRES_PASSWORD'),
-            'HOST': env('POSTGRES_HOTS'),
-            'PORT': env('POSTGRES_PORT'),
-        }
-    }
+# if env('POSTGRES_NAME') != '':
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': env('POSTGRES_NAME'),
+#             'USER': env('POSTGRES_USER'),
+#             'PASSWORD': env('POSTGRES_PASSWORD'),
+#             'HOST': env('POSTGRES_HOTS'),
+#             'PORT': env('POSTGRES_PORT'),
+#         }
+#     }
 
 
 # Password validation
